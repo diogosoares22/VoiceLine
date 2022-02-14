@@ -14,6 +14,10 @@ To run locally
   ```
   pip install -r requirements.txt
   ```
+- Install converter ffmpeg
+  ```
+  sudo apt install ffmpeg
+  ```
   
 - Make migrations and migrate the database:
   ```
