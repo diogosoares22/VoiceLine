@@ -14,3 +14,15 @@ To run locally
   ```
   pip install -r requirements.txt
   ```
+  
+- Make migrations and migrate the database:
+  ```
+   python manage.py makemigrations
+   python manage.py migrate
+  ```
+- Finally, run the application:
+  ```
+   python manage.py runserver
+  ```
+  
+  Visit http://localhost:8000/record in your browser
