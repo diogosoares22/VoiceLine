@@ -26,3 +26,5 @@ To run locally
   ```
   
   Visit http://localhost:8000/record in your browser
+
+Note: The app requires internet connection for the transcription
