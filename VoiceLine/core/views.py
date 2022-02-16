@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import Record
 import speech_recognition as sr
 import subprocess
+from backend.ml_model import *
 
 def record(request):
 
@@ -22,10 +23,15 @@ def record(request):
         record.save()
 
         AUDIO_FILE = convert("media/" + str(record.voice_record))
+        """
+        # Using google API
         r = sr.Recognizer()
         with sr.AudioFile(AUDIO_FILE) as source:
             audio = r.record(source)
         text = r.recognize_google(audio)
+        """
+        # Using facebook ml_model
+        text = speech_to_audio(AUDIO_FILE)
         record.text = text
         record.save()
 
